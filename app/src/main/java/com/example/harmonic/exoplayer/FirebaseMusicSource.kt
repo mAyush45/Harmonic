@@ -35,7 +35,7 @@ class FirebaseMusicSource @Inject constructor(private val musicDatabase: MusicDa
                 .putString(METADATA_KEY_DISPLAY_DESCRIPTION, song.subtitle)
                 .build()
 
-        }
+        }.toMutableList()
         state = State.STATE_INITIALIZED
     }
 
@@ -47,7 +47,7 @@ class FirebaseMusicSource @Inject constructor(private val musicDatabase: MusicDa
             concatenatingMediaSource.addMediaSource(mediaSource)
         }
         return concatenatingMediaSource
-    }
+    } // converts songs list to media source so that exoplayer can deal with that
 
     fun asMediaItems() = songs.map { song ->
         val desc = MediaDescriptionCompat.Builder()
