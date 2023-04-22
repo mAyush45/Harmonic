@@ -1,4 +1,4 @@
-package com.example.harmonic
+package com.example.harmonic.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var glide: RequestManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 }
